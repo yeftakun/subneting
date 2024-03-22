@@ -1,3 +1,3 @@
 # Hehe
 
-Baru fix di tabel yah...
+Hehe
