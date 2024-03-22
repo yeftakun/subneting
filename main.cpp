@@ -5,6 +5,7 @@
 #include <fstream> // Added for file handling
 #include <cmath>
 
+
 // Fungsi untuk mengonversi prefix menjadi subnet mask dalam format desimal
 std::vector<int> prefix_to_subnet_mask(int prefix) {
     std::vector<int> subnet_mask(32, 0);
@@ -106,6 +107,7 @@ void generate_subnet_table(const std::string& ip_address, int prefix, int num_en
 }
 
 int main() {
+    system("cls");
     std::string ip_address;
     int prefix, num_entries;
 
@@ -117,6 +119,7 @@ int main() {
     std::cin >> num_entries;
 
     generate_subnet_table(ip_address, prefix, num_entries);
+    system("notepad hasil.txt");
 
     return 0;
 }
