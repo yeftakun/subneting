@@ -1,5 +1,7 @@
 # Hehe
 
+Subnetting untuk IP kelas C
+
 Output:
 
 - Jumlah ubnet
