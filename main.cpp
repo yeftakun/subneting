@@ -79,7 +79,7 @@ void generate_subnet_table(const std::string& ip_address, int prefix, int num_en
         outputFile << "\nTabel Subnet:\n";
         outputFile << "Subnet\t\t| IP Awal\t| IP Akhir\t| IP Broadcast\n";
         outputFile << "-----------------------------------------------\n";
-        for (int i = 0; i < num_entries; ++i) {
+        for (int i = 0; i < num_subnets; ++i) {
             outputFile << ip_octets[0] << "." << ip_octets[1] << "." << ip_octets[2] << "." << ip_octets[3] << " | ";
             outputFile << ip_octets[0] << "." << ip_octets[1] << "." << ip_octets[2] << "." << ip_octets[3] + 1 << " | ";
             outputFile << ip_octets[0] << "." << ip_octets[1] << "." << ip_octets[2] << "." << ip_octets[3] + block_size - 2 << " | ";
@@ -109,14 +109,14 @@ void generate_subnet_table(const std::string& ip_address, int prefix, int num_en
 int main() {
     system("cls");
     std::string ip_address;
-    int prefix, num_entries;
+    int prefix, num_entries, num_subnets;
 
     std::cout << "Masukkan IP address (format xxx.xxx.xxx.xxx): ";
     std::cin >> ip_address;
     std::cout << "Masukkan prefix: ";
     std::cin >> prefix;
-    std::cout << "Masukkan jumlah baris tabel: ";
-    std::cin >> num_entries;
+    // std::cout << "Masukkan jumlah baris tabel: ";
+    // std::cin >> num_entries;  // baris tabel sesuai jumlah subnet
 
     generate_subnet_table(ip_address, prefix, num_entries);
     system("notepad hasil.txt");
